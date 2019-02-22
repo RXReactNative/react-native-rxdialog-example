@@ -1,0 +1,37 @@
+{
+    "name": "App",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node node_modules/react-native/local-cli/cli.js start",
+        "test": "jest",
+        "flow": "flow; test $? -eq 0 -o $? -eq 2"
+    },
+    "dependencies": {
+        "eslint": "^4.17.0",
+        "eslint-plugin-react-native": "^3.2.1",
+        "prop-types": "^15.6.1",
+        "react": "16.2.0",
+        "react-native": "0.52.3",
+        "react-native-rxdialog": "^1.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "7.0.0-beta.47",
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/node": "7.0.0-beta.47",
+        "@babel/plugin-proposal-decorators": "7.0.0-beta.47",
+        "@babel/plugin-transform-runtime": "7.0.0-beta.47",
+        "@babel/preset-env": "7.0.0-beta.47",
+        "@babel/runtime": "7.0.0-beta.47",
+        "babel-cli": "^6.26.0",
+        "babel-jest": "23.0.0",
+        "babel-preset-flow": "^6.23.0",
+        "babel-preset-react-native": "4.0.0",
+        "jest": "23.0.0",
+        "metro-react-native-babel-preset": "0.45.4",
+        "react-test-renderer": "16.3.1"
+    },
+    "jest": {
+        "preset": "react-native"
+    }
+}
