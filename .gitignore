@@ -2,15 +2,15 @@
 # OSX
 #
 .DS_Store
-yarn.lock
 
 # node.js
 #
 node_modules/
 npm-debug.log
 yarn-error.log
+package-lock.json
+yarn.lock
   
-
 # Xcode
 #
 build/
@@ -45,3 +45,4 @@ buck-out/
 \.buckd/
 *.keystore
       
+*.jsbundle
