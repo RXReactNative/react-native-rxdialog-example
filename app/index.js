@@ -56,7 +56,8 @@ export default class RXDialogTest extends Component {
         ], (index)=>{
           console.log('click index='+ index);
         },{
-          contentTextStyle: { color: 'blue', fontSize: 30}
+          // in Android , text多行的 fontSize 必须有 lineHeight
+          contentTextStyle: { color: 'blue', fontSize: 30, lineHeight: 33}
         },{
           titleTextStyle: { color: 'orange' }
         }
