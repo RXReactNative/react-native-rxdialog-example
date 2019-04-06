@@ -60,7 +60,7 @@ export default class RXSheet extends Dialog {
 
     let key;
     const sheetView = (
-      <View style={{ width: width, borderRadius, backgroundColor: 'transparent', overflow: 'hidden' , paddingBottom: IFIphoneX(20, 20, 0) }}>
+      <View style={{ width: width, borderRadius, backgroundColor: 'transparent', overflow: 'hidden' , paddingBottom: IFIphoneX(20, 20, 20) }}>
           {
             title.length > 0 ?
               <View>

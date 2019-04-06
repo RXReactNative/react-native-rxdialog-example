@@ -20,6 +20,7 @@ javaScript --> dialog [ Alert、toash、sheet ... ]
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/3.png)
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/4.png)
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/5.png)
+![srxboys](https://github.com/RXReactNative/react-native-rxdialog-example/blob/master/screen_img/6.png)
 
 <br /><br />
 

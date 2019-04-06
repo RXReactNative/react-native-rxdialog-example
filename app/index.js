@@ -17,6 +17,7 @@ import {
   StyleSheet,
   View,
   Text,
+  ScrollView,
   TouchableOpacity
 } from 'react-native'
 
@@ -26,8 +27,22 @@ import RXAlert   from 'react-native-rxdialog/src/UI/RXAlert'
 // 二次开发demo
 import RXSheet   from './dialogDIY/RXSheet'
 import RXToash   from './dialogDIY/RXToash'
+import RXPicker  from './dialogDIY/RXPicker'
+import CouponPicker from './Picker/Coupon/CouponPicker'
+import DatePicker from './Picker/Date/DatePicker'
+
+import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
+  DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
 
 export default class RXDialogTest extends Component {
+  constructor(props){
+    super(props);
+    this.state = ({
+      pickerVisible: false,
+      couponPickerVisible: false,
+      datePickerVisible: false
+    })
+  }
 
  /**
   * 点击事件
@@ -85,6 +100,15 @@ export default class RXDialogTest extends Component {
         console.log('click cancel')
       });
     }
+    else if(action === 5) {
+      this.setState({ pickerVisible: true})
+    }
+    else if(action === 6) {
+      this.setState({ couponPickerVisible: true})
+    }
+    else if(action === 7) {
+      this.setState({ datePickerVisible: true})
+    }
   }
 
   _getTipText(title='') {
@@ -109,21 +133,50 @@ export default class RXDialogTest extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: '#f0f4f7'}}>
-        <TouchableOpacity onPress={()=>{this.click(0)}}>
-            <View style={[styles.container, {marginTop: 80}]}>
-                <Text style={styles.text}> 默认 RXAlert 样式 </Text>
-            </View>
-        </TouchableOpacity>
+      <View style={{width: DeviceWidth, height: DeviceHeight-20, backgroundColor: '#f0f4f7'}}>
+        <ScrollView style={{flex: 1}}>
+        <View style={{paddingTop: 40}}>
+          <TouchableOpacity onPress={()=>{this.click(0)}}>
+              <View style={[styles.container]}>
+                  <Text style={styles.text}> 默认 RXAlert 样式 </Text>
+              </View>
+          </TouchableOpacity>
 
-        {this._getView(' RXAlert 支持自定义样式', 1)}
+          {this._getView(' RXAlert 支持自定义样式', 1)}
 
-        {this._getTipText('支持 二次封装，方便使用')}
-        {this._getView('demo RXSheet 样式', 2)}
-        {this._getView('demo RXToash 样式', 3)}
-        {this._getView('demo RXToash 动画样式', 4)}
-        
-      </View>
+          {this._getTipText('支持 二次封装，方便使用')}
+          {this._getView('demo RXSheet 样式', 2)}
+          {this._getView('demo RXToash 样式', 3)}
+          {this._getView('demo RXToash 动画样式', 4)}
+
+          {this._getTipText('下面是: RXPicker')}
+          {this._getView('demo RXPicker 动画样式', 5)}
+          {this._getView('demo CouponPicker 动画样式', 6)}
+          {/* {this._getView('demo DataPicker 动画样式', 7)} */}
+
+          <View style={{flex: 1,height: 20}} />
+        </View>
+      </ScrollView>
+      <RXPicker 
+        visible={this.state.pickerVisible}
+        superCallBack={(index)=>{
+          this.setState({ pickerVisible: false })
+        }}
+      />
+      <CouponPicker 
+        visible={this.state.couponPickerVisible}
+        superCallBack={(index)=>{
+          this.setState({ couponPickerVisible: false })
+        }}
+      />
+
+      <DatePicker 
+        visible={this.state.datePickerVisible}
+        superCallBack={(index)=>{
+          this.setState({ datePickerVisible: false })
+        }}
+      />
+    </View>
     )
   }
 
