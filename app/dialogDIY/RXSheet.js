@@ -51,7 +51,7 @@ export default class RXSheet extends Dialog {
     tipOptions = tipOptions || {};
     titleOptions = titleOptions || {};
 
-    cancelTitle = cancelTitle || '取消';
+    cancelTitle = cancelTitle || 'cancel (取消)';
     cancelOptions = cancelOptions || {}
 
     if (!Array.isArray(buttons) || buttons.length < 1) {

@@ -61,7 +61,7 @@ export default class RXPicker extends Component {
               }
             }>
           <View style={{flex: 1, width: width- 40, height: 80, alignItems: 'center', justifyContent: 'center', marginBottom: 50, backgroundColor: 'white'}}>
-            <Text style={{fontSize: 16, lineHeight: 20, color: 'red'}}>请用子类覆盖该方法实现UI</Text>
+            <Text style={{padding:10, fontSize: 16, lineHeight: 20, color: 'red'}}>Override this method with subclasses to implement Component(请用子类覆盖该方法实现UI)</Text>
           </View>
         </TouchableWithoutFeedback>
       )

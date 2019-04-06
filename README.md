@@ -28,18 +28,19 @@ javaScript --> dialog [ Alert、toash、sheet ... ]
 ```js
   //default write
   RXAlert.show(
-        '标题 RXAlert 支持自定义样式',
-        '内容 ---- 不可以 [ 背景点击 ]',
-        [
-          { text: '确认', style:{color: 'green', fontSize: 30} },
-          { text: '取消', style:{color: 'brown', fontSize: 8}  }
-        ], (index)=>{
-          console.log('click index='+ index);
-        },{
-          contentTextStyle: { color: 'blue', fontSize: 30}
-        },{
-          titleTextStyle: { color: 'orange' }
-        }
+    'DIY Alert title(标题)',
+    'content (Can`t click on the background) \n内容 ---- 不可以 [ 点击背景]',
+    [
+      { text: 'confirm(确认)', style:{color: 'green', fontSize: 20} },
+      { text: 'cancel(取消)', style:{color: 'brown', fontSize: 10}  }
+    ], (index)=>{
+      console.log('click index='+ index);
+    },{
+      // in Android , text多行的 fontSize 必须有 lineHeight
+      contentTextStyle: { color: 'blue', fontSize: 16, lineHeight: 20}
+    },{
+      titleTextStyle: { color: 'orange', fontSize: 20 }
+    }
   );
 ```      
 

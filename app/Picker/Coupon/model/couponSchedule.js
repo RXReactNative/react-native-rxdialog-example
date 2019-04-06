@@ -18,7 +18,7 @@ export const CouponDiscountTypePrivilege     = 803; // 特权本金
 export const CouponPickerCouponTypeJX = 0;
 export const CouponPickerCouponTypeJL = 1;
 
-export function YLCouponObj() {
+export function RXCouponObj() {
   var fsData={availArr: [], unAvailArr: []};
   return fsData;
 }
@@ -28,7 +28,7 @@ export function YLCouponObj() {
  * @param {*} availArr 可用数组-优惠券列表
  * @param {*} clear    是否[不再使用]-优惠券列表
  */
-export function YLCouponLookforID(availArr=[], clear=true) {
+export function RXCouponLookforID(availArr=[], clear=true) {
   if(clear) return false;
 
   if (!Array.isArray(availArr) || availArr.length < 2) {
@@ -47,8 +47,8 @@ export function YLCouponLookforID(availArr=[], clear=true) {
   return false;
 }
 
-export function YLCouponSchedule(models?: Array, inputMoney?:number, selectedId ?: Number) : Object {
-  var cpObj = YLCouponObj();
+export function RXCouponSchedule(models?: Array, inputMoney?:number, selectedId ?: Number) : Object {
+  var cpObj = RXCouponObj();
   // console.log('models='+models+'___');
 
   if(!models) return cpObj;
@@ -84,7 +84,7 @@ export function YLCouponSchedule(models?: Array, inputMoney?:number, selectedId 
  */
 function couponArray(models={}, inputMoney? : Number, mapFun?: Function ) : Object {
   inputMoney = inputMoney || 0;
-  var cpObj = YLCouponObj();
+  var cpObj = RXCouponObj();
   let length = models.length;
   for(var i = 0; i < length; i++) {
     let item = models[i];

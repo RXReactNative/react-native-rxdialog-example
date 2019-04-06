@@ -68,7 +68,7 @@ export default class RXToash extends Dialog {
             </View>
             : null
           }
-          <Text style={[{fontSize: 14, color: 'white', height: 40, lineHeight: 40, textAlign: 'center'},
+          <Text style={[{padding: 10,fontSize: 14, color: 'white', lineHeight: 25, textAlign: 'center'},
            {...messageOption.messageTextStyle}]}>{'  '+ message + '   '}</Text>
        </View>
     )

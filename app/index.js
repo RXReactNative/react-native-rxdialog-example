@@ -51,11 +51,11 @@ export default class RXDialogTest extends Component {
   click(action = 0) {
     if(action === 0) {
       RXAlert.show(
-            '标题 默认 RXAlert 样式',
-            '内容 ---- 不可以 [ 背景点击 ]',
+            'Alert title(标题)',
+            'content (Can`t click on the background) \n内容 ---- 不可以 [ 点击背景]',
             [
-              {text: '确认', style:{color: 'red'}},
-              {text: '取消'}
+              {text: 'confirm(确认)', style:{color: 'red'}},
+              {text: 'cancel(取消)'}
             ], (index)=>{
               console.log('click index='+ index);
             }
@@ -63,29 +63,29 @@ export default class RXDialogTest extends Component {
     }
     else if(action === 1) {
       RXAlert.show(
-        '标题 RXAlert 支持自定义样式',
-        '内容 ---- 不可以 [ 背景点击 ]',
+        'DIY Alert title(标题)',
+        'content (Can`t click on the background) \n内容 ---- 不可以 [ 点击背景]',
         [
-          { text: '确认', style:{color: 'green', fontSize: 30} },
-          { text: '取消', style:{color: 'brown', fontSize: 8}  }
+          { text: 'confirm(确认)', style:{color: 'green', fontSize: 20} },
+          { text: 'cancel(取消)', style:{color: 'brown', fontSize: 10}  }
         ], (index)=>{
           console.log('click index='+ index);
         },{
           // in Android , text多行的 fontSize 必须有 lineHeight
-          contentTextStyle: { color: 'blue', fontSize: 30, lineHeight: 33}
+          contentTextStyle: { color: 'blue', fontSize: 16, lineHeight: 20}
         },{
-          titleTextStyle: { color: 'orange' }
+          titleTextStyle: { color: 'orange', fontSize: 20 }
         }
       );
     }
     else if(action === 2){
 
       RXSheet.show(
-        '头像管理 RXSheet', 
-        '可以 [点击背景-消失 ]',
+        'Sheet => head portrait(头像管理)', 
+        'You can [click on the background - disappear] (可以 [点击背景-消失 ])',
         [
-          {text: '拍照'},
-          {text: '相册'},
+          {text: 'take a photo(拍照)'},
+          {text: 'Album(相册)'},
         ]
         , (index)=>{
           console.log('click index='+ index);
@@ -93,10 +93,10 @@ export default class RXDialogTest extends Component {
       );
     }
     else if(action === 3) {
-      RXToash.show('吐司~~  不可以 [ 背景点击 ]');
+      RXToash.show('toash \n吐司~~  不可以 [ 背景点击 ]');
     }
     else if(action === 4) {
-      RXToash.show('RXToash 动画样式，可以手动关闭', null, true, ()=>{
+      RXToash.show('toash close ( Close manually, please. )\nRXToash 动画样式，可以手动关闭。', null, true, ()=>{
         console.log('click cancel')
       });
     }
@@ -138,21 +138,21 @@ export default class RXDialogTest extends Component {
         <View style={{paddingTop: 40}}>
           <TouchableOpacity onPress={()=>{this.click(0)}}>
               <View style={[styles.container]}>
-                  <Text style={styles.text}> 默认 RXAlert 样式 </Text>
+                  <Text style={styles.text}>  RXAlert (default style) </Text>
               </View>
           </TouchableOpacity>
 
-          {this._getView(' RXAlert 支持自定义样式', 1)}
+          {this._getView(' Alert (diy style)', 1)}
 
-          {this._getTipText('支持 二次封装，方便使用')}
-          {this._getView('demo RXSheet 样式', 2)}
-          {this._getView('demo RXToash 样式', 3)}
-          {this._getView('demo RXToash 动画样式', 4)}
+          {this._getTipText('Support extensions')}
+          {this._getView('Sheet', 2)}
+          {this._getView('Toash', 3)}
+          {this._getView('Toash animal', 4)}
 
-          {this._getTipText('下面是: RXPicker')}
-          {this._getView('demo RXPicker 动画样式', 5)}
-          {this._getView('demo CouponPicker 动画样式', 6)}
-          {/* {this._getView('demo DataPicker 动画样式', 7)} */}
+          {this._getTipText('Picker [ base class ]')}
+          {this._getView('Picker (base style)', 5)}
+          {this._getView('CouponPicker', 6)}
+          {this._getView('DataPicker', 7)}
 
           <View style={{flex: 1,height: 20}} />
         </View>

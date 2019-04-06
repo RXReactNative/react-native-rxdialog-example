@@ -26,7 +26,7 @@ import PropTypes  from 'prop-types';
 import RXPicker   from '../../dialogDIY/RXPicker'
 import Coupon from './view/coupon'
 
-import {YLCouponSchedule, YLCouponLookforID} from './model/couponSchedule'
+import {RXCouponSchedule, RXCouponLookforID} from './model/couponSchedule'
 
 import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
   DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
@@ -166,12 +166,12 @@ export default class CouponPicker extends RXPicker {
     componentWillReceiveProps(nextProps) {
       const { visible } = this.props;
       
-      let newModels = YLCouponSchedule(falseDataArray, 0, this.state.selectedId);
+      let newModels = RXCouponSchedule(falseDataArray, 0, this.state.selectedId);
       this.setState({newModels})
 
       if(this.state.selectedId > 0) { //如果 id == 0 ，就没有必要，再次查找所有数据 [fix]
         let expandMore = this.state.expandMore;
-        let em = YLCouponLookforID(newModels.availArr, this.state.clear);
+        let em = RXCouponLookforID(newModels.availArr, this.state.clear);
         if(expandMore !== em) {
           this.setState({expandMore: em})
         }
@@ -240,7 +240,7 @@ export default class CouponPicker extends RXPicker {
         this.state.selectedId = 0;
         this.state.selectedModel = null
         let props = this.props;
-        let newModels = YLCouponSchedule(falseDataArray, 0, this.state.selectedId);
+        let newModels = RXCouponSchedule(falseDataArray, 0, this.state.selectedId);
         this.setState({newModels, clear: true, expandMore: false, offsetY: 0})
       }
       else if(id>0) {
@@ -248,7 +248,7 @@ export default class CouponPicker extends RXPicker {
         this.state.selectedId = id;
         this.state.selectedModel = model
         let props = this.props;
-        let newModels = YLCouponSchedule(falseDataArray, 0, this.state.selectedId);
+        let newModels = RXCouponSchedule(falseDataArray, 0, this.state.selectedId);
         this.setState({newModels, clear: false, offsetY})
       }
       else {
