@@ -31,8 +31,7 @@ import RXPicker  from './dialogDIY/RXPicker'
 import CouponPicker from './Picker/Coupon/CouponPicker'
 import DatePicker from './Picker/Date/DatePicker'
 
-import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
-  DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
+import { DeviceWidth, DeviceHeight } from 'react-native-rxdialog/src/util/PlatformType.js'
 
 export default class RXDialogTest extends Component {
   constructor(props){

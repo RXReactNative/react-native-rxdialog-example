@@ -13,18 +13,12 @@
 **/
 
 'use strict'
-import React, { Component } from 'react'
+import React from 'react'
 import {
   Text,
   View,
-  Image,
-  ActivityIndicator,
-  TouchableOpacity,
+  ActivityIndicator
 } from 'react-native'
-
-
-import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
-  DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
 
 import Dialog         from 'react-native-rxdialog/src/main/Dialog'
 import DialogTopView  from 'react-native-rxdialog/src/level/DialogTopView'

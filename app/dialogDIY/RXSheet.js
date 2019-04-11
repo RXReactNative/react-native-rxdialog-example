@@ -21,8 +21,7 @@ import {
 } from 'react-native'
 
 
-import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
-  DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
+import { IFIphoneX, DeviceWidth } from 'react-native-rxdialog/src/util/PlatformType.js'
 
 import SlideAnimation from 'react-native-rxdialog/src/animations/SlideAnimation'
 import Dialog         from 'react-native-rxdialog/src/main/Dialog'

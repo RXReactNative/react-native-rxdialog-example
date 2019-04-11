@@ -16,12 +16,9 @@ import {
 	Text,
 	View,
 	Image,
-	Animated,
 	ScrollView,
 	TouchableOpacity
 } from 'react-native'
-
-import PropTypes  from 'prop-types';
 
 import RXPicker   from '../../dialogDIY/RXPicker'
 import Coupon from './view/coupon'

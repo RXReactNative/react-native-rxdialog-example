@@ -18,13 +18,10 @@ import {
 	TouchableWithoutFeedback
 } from 'react-native'
 
-import PropTypes      from 'prop-types';
-
 import FadeAnimation from 'react-native-rxdialog/src/animations/FadeAnimation'
 import SlideAnimation from 'react-native-rxdialog/src/animations/SlideAnimation'
 
-import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
-  DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
+import {DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
 
 const width = DeviceWidth;
 const height = DeviceHeight;

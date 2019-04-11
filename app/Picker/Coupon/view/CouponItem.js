@@ -27,10 +27,7 @@ import {
   TouchableWithoutFeedback
 } from 'react-native'
 
-import PropTypes from 'prop-types';
-
-import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
-  DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
+import { DeviceWidth } from 'react-native-rxdialog/src/util/PlatformType.js'
 
 
 const icon = require('../../../images/coupon_prefix.png');

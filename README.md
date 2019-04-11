@@ -12,11 +12,11 @@ javaScript --> dialog [ Alert、toash、sheet ... ]
 
 `$ react-native link react-native-rxdialog`
 
-#### 框架默认支持
+#### default Support
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/1.png)
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/2.png)
 
-#### 二次开发 demo ( rxdialog-example )
+#### Support extensions ( rxdialog-example )
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/3.png)
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/4.png)
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/5.png)

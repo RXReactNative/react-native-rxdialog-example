@@ -33,8 +33,6 @@ import {
   TouchableWithoutFeedback
 } from 'react-native'
 
-import PropTypes from 'prop-types';
-
 import CouponItem from './CouponItem'
 
 const iconMore = require('../../../images/coupon_more.png');
