@@ -49,21 +49,36 @@ eslint --init   //会有一些引导方式安装，每个版本都不同，不�
 -------------------------------------------------------------------------------------------------------
 ### 六、eslint 针对 React-Native 需要的库：
 
-npm install --save-dev eslint-config-airbnb            // 2012-10-28  `爱彼迎` JS 样式指南  
+npm install --save-dev eslint-config-airbnb
 <br />
-npm install --save-dev eslint-plugin-import            // 2015-3-8      给elint设置规则，方便代码排错和格式化
+npm install --save-dev eslint-plugin-import
 <br />
-npm install --save-dev eslint-plugin-react              // 2014-12-24  与babel-eslint配套的eslint规则插件
+npm install --save-dev eslint-plugin-react
 <br />
-npm install --save-dev babel-eslint                        // 2015-2-22    用于eslint的babel分析器的包装器
+npm install --save-dev babel-eslint
 <br />
-npm install --save-dev eslint-plugin-jsx-a11y        // 2016-2-14    JSX元素上A11Y规则的静态AST检查器。
+npm install --save-dev eslint-plugin-jsx-a11y
 <br />
-npm install --save-dev prettier                               // 2016-11-27  prettier是一个固执己见的代码格式化程序。
+npm install --save-dev prettier
 <br />
-npm install --save-dev prettier-eslint                     // 2017-1-8      eslint --fix ➡️ 运行脚本格式代码
+npm install --save-dev prettier-eslint
+<br />
 <br />
 
+eslint-config-airbnb    &nbsp;&nbsp;&nbsp;&nbsp;// 2012-10-28  `爱彼迎` JS 样式指南
+<br>
+eslint-plugin-import     &nbsp;&nbsp;&nbsp;&nbsp;// 2015-3-8      给elint设置规则，方便代码排错和格式化
+<br />
+eslint-plugin-react        &nbsp;&nbsp;&nbsp;&nbsp;// 2014-12-24  与babel-eslint配套的eslint规则插件
+<br />
+babel-eslint                   &nbsp;&nbsp;&nbsp;&nbsp;// 2015-2-22    用于eslint的babel分析器的包装器
+<br />
+eslint-plugin-jsx-a11y   &nbsp;&nbsp;&nbsp;&nbsp;// 2016-2-14    JSX元素上A11Y规则的静态AST检查器。
+<br />
+prettier                           &nbsp;&nbsp;&nbsp;&nbsp;// 2016-11-27  prettier是一个固执己见的代码格式化程序。
+<br />
+prettier-eslint                 &nbsp;&nbsp;&nbsp;&nbsp; // 2017-1-8      eslint --fix ➡️ 运行脚本格式代码
+<br />
 
 上面的库，都可以在 https://www.npmjs.com 搜索到
 
