@@ -1,5 +1,7 @@
 platform :ios, '8.0'
 
+inhibit_all_warnings!
+
 target 'App' do
     # react-native-rxdialog #不需要导入，因为都是js代码
 

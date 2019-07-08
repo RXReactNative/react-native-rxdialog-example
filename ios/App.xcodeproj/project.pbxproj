@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8A4C40922D338000014EBBC /* PackageRNBundle.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8A4C40822D338000014EBBC /* PackageRNBundle.sh */; };
+		B8A4C40D22D338A40014EBBC /* assets in Resources */ = {isa = PBXBuildFile; fileRef = B8A4C40B22D338A40014EBBC /* assets */; };
+		B8A4C40E22D338A40014EBBC /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = B8A4C40C22D338A40014EBBC /* main.jsbundle */; };
 		B8BE6541221FAA08008BFB79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BE6540221FAA08008BFB79 /* AppDelegate.m */; };
 		B8BE6544221FAA08008BFB79 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BE6543221FAA08008BFB79 /* ViewController.m */; };
 		B8BE6549221FAA09008BFB79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8BE6548221FAA09008BFB79 /* Assets.xcassets */; };
 		B8BE654C221FAA09008BFB79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8BE654A221FAA09008BFB79 /* LaunchScreen.storyboard */; };
 		B8BE654F221FAA09008BFB79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BE654E221FAA09008BFB79 /* main.m */; };
-		B8BE6555221FB729008BFB79 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = B838E54A20CA71F5008C4645 /* main.jsbundle */; };
 		D38C40FA8F19EFD748B0DAB7 /* libPods-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1E4F2A72CCDA29FE596073 /* libPods-App.a */; };
 /* End PBXBuildFile section */
 
@@ -22,8 +24,9 @@
 		59C6F5985D1DCD3051DAE20E /* Pods-RNDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNDemo/Pods-RNDemo.release.xcconfig"; sourceTree = "<group>"; };
 		90959EC3CB107254812028A3 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		B6EF268B987E979EF6BC3BB4 /* libPods-RNDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B838E54A20CA71F5008C4645 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = ../main.jsbundle; sourceTree = "<group>"; };
-		B88EFB8520A2FFFF0016ED19 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = package.json; path = ../package.json; sourceTree = "<group>"; };
+		B8A4C40822D338000014EBBC /* PackageRNBundle.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = PackageRNBundle.sh; sourceTree = "<group>"; };
+		B8A4C40B22D338A40014EBBC /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		B8A4C40C22D338A40014EBBC /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		B8BE653D221FAA08008BFB79 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BE653F221FAA08008BFB79 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8BE6540221FAA08008BFB79 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,8 +74,8 @@
 		B836BEC92048FDBF00BC91D7 = {
 			isa = PBXGroup;
 			children = (
-				B88EFB8520A2FFFF0016ED19 /* package.json */,
-				B838E54A20CA71F5008C4645 /* main.jsbundle */,
+				B8A4C40622D338000014EBBC /* bundle */,
+				B8A4C40722D338000014EBBC /* Script */,
 				B8BE653E221FAA08008BFB79 /* App */,
 				B836BED32048FDBF00BC91D7 /* Products */,
 				1F4DFCE45C4AD87F97C9CDED /* Pods */,
@@ -86,6 +89,23 @@
 				B8BE653D221FAA08008BFB79 /* App.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B8A4C40622D338000014EBBC /* bundle */ = {
+			isa = PBXGroup;
+			children = (
+				B8A4C40B22D338A40014EBBC /* assets */,
+				B8A4C40C22D338A40014EBBC /* main.jsbundle */,
+			);
+			path = bundle;
+			sourceTree = "<group>";
+		};
+		B8A4C40722D338000014EBBC /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				B8A4C40822D338000014EBBC /* PackageRNBundle.sh */,
+			);
+			path = Script;
 			sourceTree = "<group>";
 		};
 		B8BE653E221FAA08008BFB79 /* App */ = {
@@ -111,6 +131,7 @@
 			buildConfigurationList = B8BE6552221FAA09008BFB79 /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
 				D0877161611631A441B777BB /* [CP] Check Pods Manifest.lock */,
+				B8A4C40A22D3382C0014EBBC /* [RN] Bundle */,
 				B8BE6539221FAA08008BFB79 /* Sources */,
 				B8BE653A221FAA08008BFB79 /* Frameworks */,
 				B8BE653B221FAA08008BFB79 /* Resources */,
@@ -164,9 +185,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8BE6555221FB729008BFB79 /* main.jsbundle in Resources */,
 				B8BE654C221FAA09008BFB79 /* LaunchScreen.storyboard in Resources */,
+				B8A4C40D22D338A40014EBBC /* assets in Resources */,
+				B8A4C40E22D338A40014EBBC /* main.jsbundle in Resources */,
 				B8BE6549221FAA09008BFB79 /* Assets.xcassets in Resources */,
+				B8A4C40922D338000014EBBC /* PackageRNBundle.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +213,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B8A4C40A22D3382C0014EBBC /* [RN] Bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[RN] Bundle";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/Script/PackageRNBundle.sh\n";
 		};
 		D0877161611631A441B777BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

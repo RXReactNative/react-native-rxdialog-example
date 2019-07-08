@@ -5,6 +5,10 @@
  * @flow  : 用于 静态语法检查
  * 
  * -------------------------------------------
+ * 该项目 ： 主要 - 提供思路 
+ * 
+ * 
+ * -------------------------------------------
  * 
  * 弊端：(待解决)
  * 1、DialogTopView 同时多个弹框 出现/消失 动画不准确( 特别是：消失的动画 ) 
@@ -31,6 +35,9 @@ import RXPicker  from './dialogDIY/RXPicker'
 import CouponPicker from './Picker/Coupon/CouponPicker'
 import DatePicker from './Picker/Date/DatePicker'
 
+import Overlay from './dialogPack/Overlay'
+import AlertUtil from './dialogPack/AlertUtil'
+
 import { DeviceWidth, DeviceHeight } from 'react-native-rxdialog/src/util/PlatformType.js'
 
 export default class RXDialogTest extends Component {
@@ -50,14 +57,14 @@ export default class RXDialogTest extends Component {
   click(action = 0) {
     if(action === 0) {
       RXAlert.show(
-            'Alert title(标题)',
-            'content (Can`t click on the background) \n内容 ---- 不可以 [ 点击背景]',
-            [
-              {text: 'confirm(确认)', style:{color: 'red'}},
-              {text: 'cancel(取消)'}
-            ], (index)=>{
-              console.log('click index='+ index);
-            }
+        'Alert title(标题)',
+        'content (Can`t click on the background) \n内容 ---- 不可以 [ 点击背景]',
+        [
+          {text: 'confirm(确认)', style:{color: 'red'}},
+          {text: 'cancel(取消)'}
+        ], (index)=>{
+          console.log('click index='+ index);
+        }
       );
     }
     else if(action === 1) {
@@ -78,7 +85,6 @@ export default class RXDialogTest extends Component {
       );
     }
     else if(action === 2){
-
       RXSheet.show(
         'Sheet => head portrait(头像管理)', 
         'You can [click on the background - disappear] (可以 [点击背景-消失 ])',
@@ -108,6 +114,30 @@ export default class RXDialogTest extends Component {
     else if(action === 7) {
       this.setState({ datePickerVisible: true})
     }
+    else if(action === 8) {
+      Overlay.showInputAlert({
+        title: '修改内容',
+        detail: '默认',
+        bottomButtons: [
+            {},
+            { 
+              onPress: (str) => {
+                console.log('8 - Overlay - showInputAlert')
+              }
+            }
+          ]
+      });
+    }
+    else if(action === 9) {
+      AlertUtil.activity(()=>{
+        console.log('9 - right - click sure')
+      })
+    }
+    else if(action === 10) {
+      AlertUtil.action(()=>{
+        console.log('10 - left - click sure')
+      })
+    }
   }
 
   _getTipText(title='') {
@@ -115,7 +145,7 @@ export default class RXDialogTest extends Component {
       <Text style={{height: 20, backgroundColor: 'orange', color: 'black',
                     marginTop: 40, textAlign: 'center',
                     fontSize: 14, lineHeight: 20}}>
-      {title}
+        {title}
       </Text>
     )
   }
@@ -123,10 +153,10 @@ export default class RXDialogTest extends Component {
   _getView(title='', action=0) {
     return (
       <TouchableOpacity onPress={()=>{this.click(action)}}>
-            <View style={styles.container}>
-                <Text style={styles.text}> {title} </Text>
-            </View>
-        </TouchableOpacity>
+        <View style={styles.container}>
+            <Text style={styles.text}> {title} </Text>
+        </View>
+      </TouchableOpacity>
     )
   }
 
@@ -136,9 +166,9 @@ export default class RXDialogTest extends Component {
         <ScrollView style={{flex: 1}}>
         <View style={{paddingTop: 40}}>
           <TouchableOpacity onPress={()=>{this.click(0)}}>
-              <View style={[styles.container]}>
-                  <Text style={styles.text}>  RXAlert (default style) </Text>
-              </View>
+            <View style={[styles.container]}>
+              <Text style={styles.text}>  RXAlert (default style) </Text>
+            </View>
           </TouchableOpacity>
 
           {this._getView(' Alert (diy style)', 1)}
@@ -153,6 +183,11 @@ export default class RXDialogTest extends Component {
           {this._getView('CouponPicker', 6)}
           {this._getView('DataPicker', 7)}
 
+          {this._getTipText('Support dialog pack')}
+          {this._getView('alert input view', 8)}
+          {this._getView('AlertUtil right', 9)}
+          {this._getView('AlertUtil left', 10)}
+
           <View style={{flex: 1,height: 20}} />
         </View>
       </ScrollView>
@@ -162,6 +197,7 @@ export default class RXDialogTest extends Component {
           this.setState({ pickerVisible: false })
         }}
       />
+      
       <CouponPicker 
         visible={this.state.couponPickerVisible}
         superCallBack={(index)=>{
@@ -178,11 +214,7 @@ export default class RXDialogTest extends Component {
     </View>
     )
   }
-
-
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -194,7 +226,6 @@ const styles = StyleSheet.create({
     height: 40, 
     backgroundColor: 'white',
   },
-
   text: {
     fontSize: 24, 
     color: 'blue',
