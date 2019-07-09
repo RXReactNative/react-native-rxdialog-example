@@ -8,10 +8,6 @@ javaScript --> dialog [ Alert、toash、sheet ... ]
 
 `$ npm install react-native-rxdialog --save`
 
-### Mostly automatic installation
-
-`$ react-native link react-native-rxdialog`
-
 #### default Support
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/1.png)
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/2.png)
