@@ -80,7 +80,7 @@ export default class Alert extends Component {
           {title}
           {message}
           <View style={styles.bottomContainer} >
-            {leftTitle ? this.renderButton(leftTitle, btnStyle, styles.btnCancel, this.onLeftPress) : null}
+            {leftTitle ? this.renderButton(leftTitle, [btnStyle, leftStyle], styles.btnCancel, this.onLeftPress) : null}
             {rightTitle ? this.renderButton(rightTitle, btnStyle, styles.btnSure, this.onRightPress) : null}
           </View>
         </View>
