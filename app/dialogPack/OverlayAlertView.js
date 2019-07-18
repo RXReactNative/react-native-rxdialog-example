@@ -12,19 +12,15 @@
 import React, {Component} from 'react'
 import {} from 'react-native'
 
-import Dialog         from 'react-native-rxdialog/src/main/Dialog'
-import DialogTopView  from 'react-native-rxdialog/src/level/DialogTopView'
-
-import AlertAnimation from 'react-native-rxdialog/src/animations/AlertAnimation'
-
-import {DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
-
-const width = DeviceWidth;
-const height = DeviceHeight;
+import {
+  RXDialog,
+  RXDialogTopView,
+  RXAlertAnimation,
+} from 'react-native-rxdialog'
 
 let OverlayView_key;
 
-export default class OverlayAlertView extends Dialog {
+export default class OverlayAlertView extends RXDialog {
 
   static dismiss() {
     if(OverlayView_key) {
@@ -37,13 +33,13 @@ export default class OverlayAlertView extends Dialog {
       OverlayView_key=null; 
       return null;
     }
-    let element = Dialog.addPropsValue(this, view, 'alert', (index)=>{});
-    OverlayView_key = DialogTopView.add(element);
+    let element = RXDialog.addPropsValue(this, view, 'alert', (index)=>{});
+    OverlayView_key = RXDialogTopView.add(element);
     return OverlayView_key;
   }
 
   static getDialogAnimated() {
-    let animated = new AlertAnimation();
+    let animated = new RXAlertAnimation();
     return (  animated )
   }
 }

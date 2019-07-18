@@ -14,14 +14,13 @@ import {
   StyleSheet, 
   Text, 
   View, 
-  Image, 
   TextInput, 
   TouchableOpacity, 
 } from 'react-native';
 
 import PropTypes from 'prop-types';
 
-import {DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
+import { DeviceWidth } from 'react-native-rxdialog'
 
 const InputWidth = DeviceWidth<=320?200:238;
 
