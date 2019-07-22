@@ -61,19 +61,24 @@ function change_file_text()
   echo '*********'
   # 获取 文本
   old_data=${local_line_info#*:}
-#  echo 'old_data_0=>'$old_data
+  echo 'old_data_0=>'$old_data
 
-  # 获取 文本中 =@"http://x.x.x.x:8081/xx
+  # 获取后 文本为 =@"http://x.x.x.x:8081/xx
   old_data=${old_data#*:}
-#  echo 'old_data_1=>'$old_data
+  echo 'old_data_1=>'$old_data
 
-  # 获取 文本中 =x.x.x.x:8081/xx
+  # 获取后 文本为 =x.x.x.x:8081/xx
   old_data=${old_data#*//}
-#  echo 'old_data_2=>'$old_data
+  echo 'old_data_2=>'$old_data
 
-  # 获取 文本中 =x.x.x.x
+  # 获取后 文本为 =x.x.x.x
   js_text_ip=${old_data%%:*}
   echo 'get_js_text_ip=>'$js_text_ip
+
+  if [[ !$js_text_ip && $js_text_ip == $old_data ]]; then
+    echo 'error -> AppDelegate.m => no ip with “text”'
+    return
+  fi
 
   get_computer_id
 
