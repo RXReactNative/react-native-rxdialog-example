@@ -36,6 +36,7 @@
 		B8BE654B221FAA09008BFB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8BE654D221FAA09008BFB79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8BE654E221FAA09008BFB79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B8CBE91022E57BF9002BA433 /* JSCodeLocation.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = JSCodeLocation.sh; sourceTree = "<group>"; };
 		DCDCDEA68F71DA2218F4AC1E /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A4C40822D338000014EBBC /* PackageRNBundle.sh */,
+				B8CBE91022E57BF9002BA433 /* JSCodeLocation.sh */,
 			);
 			path = Script;
 			sourceTree = "<group>";
@@ -130,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8BE6552221FAA09008BFB79 /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
+				B8CBE91222E57C12002BA433 /* [AppDelegate.m]-JSCodeLocation */,
 				D0877161611631A441B777BB /* [CP] Check Pods Manifest.lock */,
 				B8A4C40A22D3382C0014EBBC /* [RN] Bundle */,
 				B8BE6539221FAA08008BFB79 /* Sources */,
@@ -231,6 +234,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "$SRCROOT/Script/PackageRNBundle.sh\n";
+		};
+		B8CBE91222E57C12002BA433 /* [AppDelegate.m]-JSCodeLocation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[AppDelegate.m]-JSCodeLocation";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/Script/JSCodeLocation.sh\n";
 		};
 		D0877161611631A441B777BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

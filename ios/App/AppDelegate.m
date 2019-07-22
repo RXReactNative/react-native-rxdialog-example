@@ -23,6 +23,7 @@
     
     // 先编译，后执行
 //    jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+//    jsCodeLocation = [NSURL URLWithString:@"http://1.1.1.1:8081/index.ios.bundle?platform=ios"];//ip -- js location
     
     //执行，已经编译好的文件
      jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForFallbackResource:nil fallbackExtension:nil];
