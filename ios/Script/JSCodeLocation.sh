@@ -82,7 +82,7 @@ function change_file_text()
 
   get_computer_id
 
-  if [[ js_text_ip==current_mac_ip ]]; then
+  if [[ $js_text_ip == $current_mac_ip ]]; then
     echo 'perfect， No need to replace IP'
     return
   fi
