@@ -82,6 +82,11 @@ function change_file_text()
 
   get_computer_id
 
+  if [[ js_text_ip==current_mac_ip ]]; then
+    echo 'perfect， No need to replace IP'
+    return
+  fi
+
   temp_app_delegate_path=$path/$PRODUCT_NAME/temp_AppDelete.txt
   sed "s/$js_text_ip/$current_mac_ip/g" $app_delegate_path > $temp_app_delegate_path
   mv $temp_app_delegate_path $app_delegate_path
