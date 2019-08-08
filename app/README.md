@@ -6,6 +6,8 @@ srxboys 2019-4-12
 (官方：https://eslint.org) 
 <br />
 (中文翻译：https://cn.eslint.org)
+<br />
+[美团技术团队ESLint实践](https://tech.meituan.com/2019/08/01/eslint-application-practice-in-medium-and-large-teams.html)
 
 -------------------------------------------------------------------------------------------------------
    代码检查是一种静态的分析，常用于寻找有问题的模式或者代码，并且不依赖于具体的编码风格。

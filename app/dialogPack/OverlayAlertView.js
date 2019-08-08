@@ -40,6 +40,6 @@ export default class OverlayAlertView extends RXDialog {
 
   static getDialogAnimated() {
     let animated = new RXAlertAnimation();
-    return (  animated )
+    return ( animated )
   }
 }

@@ -108,7 +108,7 @@ output_assets_dir=$ios_assets_path
 # 1、无用的 xx.meta
 delete_js_meta_path=$ios_page/main.jsbundle.meta
 # 2、无用的 xx/react-navigation-stack
-delete_assets_navigation=$ios_page/assets/node_modules
+delete_assets_navigation=$ios_page/assets/node_modules/react-navigation-stack
 
 if [ "$platform" == "android" ];then
   #如果是 Android 打包，对应 RN 的参数
@@ -145,10 +145,12 @@ if [ -f $delete_js_meta_path ];then
   /bin/rm -rf  $delete_js_meta_path
 fi
 
-function delete_unnecessary_files_for_android_assets()
+# 3 - 删除文件
+function node_modules_delete_file()
 {
-  if [ $1 ];then
-    file=$1
+  file=$1
+  # echo 'will delete file=>'$file
+  if [ -n $file ];then
     if [ -f $file ]; then
       echo " delete node_modules->react-navigation-stack => "$file >> $result_path
       /bin/rm -rf  $file
@@ -156,35 +158,99 @@ function delete_unnecessary_files_for_android_assets()
   fi
 }
 
+# 2 - 目录中的文件名 是否 为 react-navigation的资源，是就删除
+function android_assets_file() {
+  # echo ''
+  # echo 'android_assets_file'
+
+  del_file_prefix='node_modules_reactnavigation'
+  min_lenght=${#del_file_prefix}
+  # echo "$min_lenght is min_lenght"
+
+  file=$1
+  if [[ -f "$file" ]]; then
+    # echo "$file is file"
+    file_name=${file##*/}
+    # echo "file_name=>$file_name"
+    
+    if [[ -f "$file_name" || -d "$file_name" ]]; then
+      # echo ''
+      # echo 'error => *****'
+      # echo 'file_name='$file_name
+      # echo 'error => *****'
+      # echo ''
+      return
+    fi
+
+    file_name_length=${#file_name}
+    # echo "$file_name_length is file_name_length"
+    if [[ $[$file_name_length] -gt $[$min_lenght] ]]; then
+      lenght=$[$min_lenght]
+      # echo 'lenght='$lenght
+      temp_file_prefix=${file_name:0:$lenght}
+      # echo 'temp_file_prefix='$temp_file_prefix
+      if [[ $temp_file_prefix == $del_file_prefix ]]; then
+        # echo 'delete file =>>>>> '$file
+        node_modules_delete_file $file
+      fi
+    fi
+  fi
+}
+
+# 1- 循环 删除目录中的文件
+function android_assets_dir()
+{
+  # echo ''
+  # echo 'android_assets_dir'
+  file_dir=$1
+  if [[ ! -d $file_dir ]]; then
+    # 目录不存在
+    # echo "android $file_dir，不存在"
+    return
+  fi
+
+  for file in $file_dir/*
+  do
+  if [[ -d "$file" ]]; then 
+    # echo "$file is directory => android_assets_dir()"
+    android_assets_dir $file
+  elif [[ -f "$file" ]]; then
+    android_assets_file $file
+  fi
+  done
+}
+
+# 0 - 删除Android 中react-navigation 的图片资源
+function delete_android_assets()
+{
+  # echo ''
+  # echo 'delete_android_assets'
+  if [[ ! -d $android_assets_path ]]; then
+    # 目录不存在
+    # echo 'Android 无用资源目录，不存在'
+    return
+  fi
+
+  for file in $android_assets_path*
+  do
+  # echo '-------------------'
+  # echo 'option file =>' $file
+  if [[ -d "$file" ]]; then 
+    # echo "$file is directory => delete_android_assets()"
+    android_assets_dir $file
+  elif [[ -f "$file" ]]; then
+    android_assets_file $file
+  fi
+  done
+  # echo ''
+}
 
 if [[ "$platform" == "ios"  && -d $delete_assets_navigation ]]; then
-  echo " delete node_modules->react-navigation-stack => "$delete_assets_navigation >> $result_path
-  /bin/rm -rf $delete_assets_navigation
+  node_modules_delete_file $delete_assets_navigation
 elif [ "$platform" == "android" ]; then
   # android 
-
-  # hdpi
-  res_hdpi_assets_backicon=$android_assets_path/drawable-hdpi/node_modules_reactnavigation_src_views_assets_backicon.png
-  delete_unnecessary_files_for_android_assets $res_hdpi_assets_backicon
-
-  # mdpi
-  res_mdpi_assets_backicon=$android_assets_path/drawable-mdpi/node_modules_reactnavigation_src_views_assets_backicon.png
-  res_mdpi_assets_backiconmask=$android_assets_path/drawable-mdpi/node_modules_reactnavigation_src_views_assets_backiconmask.png
-
-  delete_unnecessary_files_for_android_assets $res_mdpi_assets_backicon
-  delete_unnecessary_files_for_android_assets $res_mdpi_assets_backiconmask
-
-  # xhdpi
-  res_xhdpi_assets_backicon=$android_assets_path/drawable-xhdpi/node_modules_reactnavigation_src_views_assets_backicon.png
-  delete_unnecessary_files_for_android_assets $res_xhdpi_assets_backicon
-
-  # xxhdpi
-  res_xxhdpi_assets_backicon=$android_assets_path/drawable-xxhdpi/node_modules_reactnavigation_src_views_assets_backicon.png
-  delete_unnecessary_files_for_android_assets $res_xxhdpi_assets_backicon
-
-  # xxxhdpi
-  res_xxxhdpi_assets_backicon=$android_assets_path/drawable-xxxhdpi/node_modules_reactnavigation_src_views_assets_backicon.png
-  delete_unnecessary_files_for_android_assets $res_xxxhdpi_assets_backicon
+  delete_android_assets
+  # echo ''
 fi
 
 echo "" >> $result_path
@@ -203,8 +269,6 @@ echo "" >> $result_path
 #-----------------------
 #-----------------------
 
-
-
 :<<!
 
 # ios (为了方便看，下面有换行操作)
@@ -220,4 +284,3 @@ android/app/src/main/assets/index.android.bundle
 
 --------------------------------------------------------------------
 !
-
