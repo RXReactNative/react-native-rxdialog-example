@@ -28,11 +28,11 @@ import {
 } from 'react-native'
 
 import { DeviceWidth } from 'react-native-rxdialog/src/util/PlatformType.js'
+import ImageMap from '../../images/ImageMap';
 
-
-const icon = require('../../../images/coupon_prefix.png');
-const btnImgNomal = require('../../../images/coupon_pick_no.png');
-const btnImgSelected = require('../../../images/coupon_pick_yes.png');
+const icon = ImageMap.coupon_prefix;
+const btnImgNomal = ImageMap.coupon_pick_no;
+const btnImgSelected = ImageMap.coupon_pick_yes;
 
 export default class couponDCBInvest extends Component {
   constructor(props){

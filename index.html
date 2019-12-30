@@ -1,0 +1,50 @@
+<!DOCTYPE html5>
+<html lang="en" style="height:100%">
+<head>
+  <style id="react-native-stylesheet"></style>
+  <meta charset="UTF-8" />
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
+  <link rel="icon" href="data:image/ico;base64,aWNv">
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    #root {
+      height: 100%;
+      overflow: hidden;
+    }
+    .preload {
+			width: 100%; height: 100%;
+			position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 999999;
+			background-color: transparent;
+		}
+		.preload > div {
+			width: 180px; height: 120px;
+			position: absolute; top: 50%; left: 50%;
+			margin: -60px 0 0 -90px;
+			padding-top: 70px;
+			background: #fff url(data:image/gif;base64,R0lGODlhIAAgAKIHANLS0pCQkLy8vODg4DQ0NGRkZAAAAOfn5yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5NGQ3YWZhMi1hZmFhLTRlNTAtODZhZi1jZTM1ZWM0NTM4NDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjEwQThERjIzRUUyMTFFOEFBNkNCRkRCMjY3MTRBNkIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjEwQThERjEzRUUyMTFFOEFBNkNCRkRCMjY3MTRBNkIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MzlmMGQ2NjEtNTRhMi00ODBkLWFkZDItNGVjZWYzM2E2ZDE3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ODkxNmYxMTgtYTAzZi0yZTRhLTg3YTEtY2M3Y2UyNzU3MzE5Ii8+IDwvcmRmOkRlc2NyaXB0aW9u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) no-repeat center 30px;
+			text-align: center; font-size: 16px; overflow: hidden;
+		}
+  </style>
+</head>
+
+<body style="height:100%">
+  <div id="react-root" style="display:flex;height:100%">
+    <script type="text/javascript">
+      window.history.pushState('forward', null, '#'); 
+      window.history.forward(1);
+    </script>
+    <app-shell>
+      <div class="preload">
+        <div>正在载入...</div>
+      </div>
+    </app-shell>
+  </div>
+</body>
+
+</html>

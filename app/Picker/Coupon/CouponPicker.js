@@ -27,9 +27,8 @@ import {RXCouponSchedule, RXCouponLookforID} from './model/couponSchedule'
 
 import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
   DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
-
-
-const CLOSE_IMG_SOURCE = require('../../images/icon_16x_close.png');  
+import ImageMap from '../images/ImageMap';
+const CLOSE_IMG_SOURCE = ImageMap.icon_16x_close;  
 
 const width = DeviceWidth;
 const height = (DeviceHeight-IFIphoneX(88, 64, 64)) * 0.84;

@@ -28,12 +28,13 @@ import RXPicker   from '../../dialogDIY/RXPicker'
 import {ISIphoneX, ISIphone,ISAndroid, IFIphone, IFIphoneX,
   DeviceWidth, DeviceHeight} from 'react-native-rxdialog/src/util/PlatformType.js'
  
+  import ImageMap from '../images/ImageMap';
 
 const width = DeviceWidth;
 const height = 300;
 const scrollHeight = height - 50
 
-const CLOSE_IMG_SOURCE = require('../../images/icon_16x_close.png');
+const CLOSE_IMG_SOURCE = ImageMap.icon_16x_close.png;
 
 export default class DatePicker extends RXPicker {
     constructor(props){

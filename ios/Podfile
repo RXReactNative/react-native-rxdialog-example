@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 inhibit_all_warnings!
 
@@ -33,8 +33,8 @@ target 'App' do
     pod "yoga", :path => "../node_modules/react-native/ReactCommon/yoga"
 
   	 # 如果RN版本 >= 0.45则加入下面三个第三方编译依赖
- 	pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
- 	pod 'GLog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
+    pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+    pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   	pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
     
 	post_install do |installer|

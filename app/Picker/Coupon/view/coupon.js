@@ -30,12 +30,14 @@ import {
   View,
   Image,
   LayoutAnimation,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Platform
 } from 'react-native'
 
 import CouponItem from './CouponItem'
+import ImageMap from '../../images/ImageMap';
 
-const iconMore = require('../../../images/coupon_more.png');
+const iconMore = ImageMap.coupon_more;
 
 const LINE_ARRAY = [
                       {

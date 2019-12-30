@@ -17,6 +17,8 @@ import { } from 'react-native';
 import OverlayAlertView from './OverlayAlertView'
 import Alert from './component/Alert'
 
+import RXAlert from './component/Alert-ios'
+
 const alert = (title, message, leftTitle, rightTitle, onLeftPress, onRightPress) => {
   var key = null,
   dismiss = () => { OverlayAlertView.hide(key) },
@@ -32,6 +34,17 @@ const alert = (title, message, leftTitle, rightTitle, onLeftPress, onRightPress)
   )
 }
 
+const rxalert = (config) => {
+  var key = null,
+  dismiss = () => { OverlayAlertView.hide(key) },
+  key = OverlayAlertView.show(
+    <RXAlert
+      {...config}
+      dismiss={dismiss}
+    />
+  )
+}
+
 export default {
   activity: (callback) => {
     alert('', '仅右侧按钮点击有回调', '取消', '确定', () => { }, callback);
@@ -40,4 +53,8 @@ export default {
   action: (callback) => {
     alert('', '仅左侧按钮点击有回调', '确定', '取消', callback, () => { })
   },
+
+  rxalert: (config={}) => {
+    rxalert(config);
+  }
 }

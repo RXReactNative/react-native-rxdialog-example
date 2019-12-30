@@ -21,12 +21,15 @@
     
     NSURL *jsCodeLocation;
     
-    // 先编译，后执行
+    // 1 先编译，后执行
 //    jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
 //    jsCodeLocation = [NSURL URLWithString:@"http://1.1.1.1:8081/index.ios.bundle?platform=ios"];//ip -- js location
     
-    //执行，已经编译好的文件
-     jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForFallbackResource:nil fallbackExtension:nil];
+    //2 执行，已经编译好的文件
+//     jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForFallbackResource:nil fallbackExtension:nil];
+    
+    // 3 自动选择 local 、 ip
+    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
     
     
     RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation

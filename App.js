@@ -19,3 +19,19 @@ export default class App extends Component {
     return <RXIndex />
   }
 }
+
+
+// import {
+//   View,
+//   Text,
+// } from 'react-native'
+
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <View>
+//         <Text>srxboys</Text>
+//       </View>
+//     )
+//   }
+// }

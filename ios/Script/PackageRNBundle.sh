@@ -2,7 +2,10 @@
 # set -x
 #
 #
+#  编译工程的同时，给RN打bundle包
 #
+# 注意：在 `build Phases` 搜索中，删除当前文件，因为当前脚本 只为Xcode编译时才会用到，和工程项目 业务无关。
+
 path=$SRCROOT/Script
 
 RNPackagePathROOT='../'
@@ -42,7 +45,7 @@ function package_with_sh() {
 
   local log=$rootPath/script/$RNPackageLog
   /bin/sh $package_sh > $log
-  local result=`cat $log | grep "bundle: Done"`
+  local result=`cat $log | grep "Done copying assets"`
 
   if [[ $result != "" && -d $OutputRNBundle ]]; then
     echo 'jsbundle 打包成功'

@@ -134,9 +134,30 @@ export default class RXDialogTest extends Component {
       })
     }
     else if(action === 10) {
-      AlertUtil.action(()=>{
-        console.log('10 - left - click sure')
-      })
+      // AlertUtil.action(()=>{
+      //   console.log('10 - left - click sure')
+      // });
+
+      // AlertUtil.rxalert({
+      //     title: 'srxboys',
+      //     detail: 'detail'
+      //   }
+      // )
+
+      AlertUtil.rxalert({
+          title: 'srxboys',
+          detail: 'detail',
+          bottomButtons: [
+            {
+              title: 'cancel'
+            },
+            {
+              title: 'sure'
+            }
+          ]
+        }
+      )
+
     }
   }
 
