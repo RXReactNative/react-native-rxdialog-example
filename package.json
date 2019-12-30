@@ -6,9 +6,10 @@
         "start": "node node_modules/react-native/local-cli/cli.js start",
         "test": "node node_modules/jest/bin/jest.js --watch",
         "flow": "flow; test $? -eq 0 -o $? -eq 2",
-        "web-build-prod": "set NODE_ENV=production && ./node_modules/.bin/webpack -p --config ./web/webpack.prod.config.js",
-        "web-build-dev-server": "NODE_ENV=development && webpack-dev-server -d --config ./web/webpack.dev.config.js --port 3001 --inline --hot --colors  --history-api-fallback",
-        "web-nginx-dev": "NODE_ENV=development && ./node_modules/.bin/webpack -p --config ./web/webpack.dev.config.js"
+        "clearFolder": "rm -rf dialog-example",
+        "web-build-prod": "set NODE_ENV=production && npm run clearFolder && ./node_modules/.bin/webpack -p --config ./web/webpack.prod.config.js",
+        "web-build-dev-server": "NODE_ENV=development && npm run clearFolder && webpack-dev-server -d --config ./web/webpack.dev.config.js --port 3001 --inline --hot --colors  --history-api-fallback",
+        "web-nginx-dev": "NODE_ENV=development && npm run clearFolder && ./node_modules/.bin/webpack -p --config ./web/webpack.dev.config.js"
     },
     "dependencies": {
         "react": "16.8.3",
