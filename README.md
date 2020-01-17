@@ -8,6 +8,10 @@ javaScript --> dialog [ Alert、toash、sheet ... ]
 
 `$ npm install react-native-rxdialog --save`
 
+
+`演示 web` / `show web`
+https://rxreactnative.github.io/react-native-rxdialog-example/
+
 #### default Support
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/1.png)
 ![srxboys](https://github.com/RXReactNative/react-native-rxdialog/blob/master/screen_img/2.png)
@@ -53,3 +57,11 @@ AlertUtil.action(()=>{
 ```
 
 <br /><br />
+
+
+web work
+```sh
+npm run web-nginx-dev
+# or
+npm run web-build-prod
+```

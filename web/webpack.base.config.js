@@ -75,7 +75,7 @@ module.exports = {
   output: {
     chunkFilename:"common."+new Date().getTime()+".js",
     filename: "bundle."+new Date().getTime()+".js",
-    path: path.resolve(appDirectory, "dialog-example"),
+    path: path.resolve(appDirectory, "docs"),
     // path: '/usr/local/Cellar/nginx/1.17.0/html/dialog-example',
     // path: '/usr/local/Cellar/nginx/1.15.9/html/dialog-example',
     devtoolModuleFilenameTemplate: info =>
