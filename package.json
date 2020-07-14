@@ -8,7 +8,7 @@
         "flow": "flow; test $? -eq 0 -o $? -eq 2",
         "clearFolder": "node ./script/web/rm-docs.js",
         "web-build": "set NODE_ENV=production && npm run clearFolder && webpack -p --config ./web/webpack.prod.config.js",
-        "web-dev": "set NODE_ENV=development && npm run clearFolder && webpack-dev-server -d --config ./web/webpack.dev.config.js --port 3001 --inline --hot --colors  --history-api-fallback",
+        "web-dev": "set NODE_ENV=development && webpack-dev-server -d --config ./web/webpack.dev.config.js --port 3001 --inline --hot --colors  --history-api-fallback",
         "web-devbuild": "set NODE_ENV=development && npm run clearFolder && webpack -p --config ./web/webpack.dev.config.js"
     },
     "dependencies": {
